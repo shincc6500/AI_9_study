@@ -7,7 +7,7 @@
 # 회귀 모델
 LinearRegression, DecisionTreeRegressor, RandomForestRegressor, XGBRegressor를 사용. 
 
-# 모델 성능 평가. 
+# 모델 성능 평가. #이미지 첨부
 ![alt text](image.png)
 
 train 결과값을 기준으로 학습 수준을 판단, test 결과값을 기반으로 모델 성능을 판단. 모델 성능은 XGB 모델이 가장 성능이 좋다는 것을 보여주고 있음. RandomForestRegressor의 경우 train 데이터에 대해서 MAE,MSE, R2 모드 수치가 높지만, test 데이터에 대해서는 XGB와 비슷하거나 낮다. 따라서 RandomForestRegressor는 과적합이 심한 상황이라고 판단 가능하다. 
