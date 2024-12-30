@@ -8,19 +8,7 @@
 LinearRegression, DecisionTreeRegressor, RandomForestRegressor, XGBRegressor를 사용. 
 
 # 모델 성능 평가. 
-train
-	MAE	        MSE	        R2 score
-LR	0.406786	0.345202	0.670524
-DT	0.113062	0.222444	0.892089
-RF	0.023013	0.102084	0.978035
-xgb	0.063572	0.181742	0.939324
-
-test
-    MAE	        MSE	        R2 score
-LR	0.364538	0.222392	0.721893
-DT	0.286659	0.147562	0.815469
-RF	0.230097	0.101900	0.872571
-xgb	0.093816	0.234450	0.882680
+![alt text](image.png)
 
 train 결과값을 기준으로 학습 수준을 판단, test 결과값을 기반으로 모델 성능을 판단. 모델 성능은 XGB 모델이 가장 성능이 좋다는 것을 보여주고 있음. RandomForestRegressor의 경우 train 데이터에 대해서 MAE,MSE, R2 모드 수치가 높지만, test 데이터에 대해서는 XGB와 비슷하거나 낮다. 따라서 RandomForestRegressor는 과적합이 심한 상황이라고 판단 가능하다. 
 

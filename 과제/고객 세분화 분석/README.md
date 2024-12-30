@@ -21,10 +21,7 @@ GMM_Silhouette Score    : 0.3999977925024676  # GaussianMixture
 따라서 계층적 군지화가 가장 클러스터링 성능이 좋다고 판단 가능하다. 
 
 # 예측모델 
-	                    Age	        Annual Income (k$)	Spending Score (1-100)
-Age 	                 1.000000	-0.012398	        -0.327227
-Annual Income (k$)	    -0.012398	1.000000	         0.009903
-Spending Score (1-100)	-0.327227	0.009903	         1.000000
+![alt text](image.png)
 
 각 특징간의 상관관계가 부족하여 예측 모델을 구성할 데이터라고 보긴 어렵다. 
 
