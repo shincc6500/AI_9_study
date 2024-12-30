@@ -13,15 +13,22 @@ k-mean은 엘보우 방법, 나머지는 실루엣 점수를 기반으로 클러
 3차원 산포도로 시각화를 진행함. 
 
 # 클러스터링 기법 비교. 
-Kmeans_Silhouette Score : 0.40846873777345605 # k_mean
-AC_Silhouette Score     : 0.4201169558789579  # 계층적 군집화
-DBSCAN_Silhouette Score : 0.11395369330062792 # DBSCAN
-GMM_Silhouette Score    : 0.3999977925024676  # GaussianMixture
+Kmeans_Silhouette Score : 0.40846873777345605 # k_mean   
+AC_Silhouette Score     : 0.4201169558789579  # 계층적 군집화   
+DBSCAN_Silhouette Score : 0.11395369330062792 # DBSCAN   
+GMM_Silhouette Score    : 0.3999977925024676  # GaussianMixture   
 
 따라서 계층적 군지화가 가장 클러스터링 성능이 좋다고 판단 가능하다. 
 
 # 예측모델 
+<<<<<<< HEAD
 ![alt text](image.png)
+=======
+	                    Age	        Annual Income (k$)	Spending Score (1-100)   
+Age 	                 1.000000	-0.012398	        -0.327227   
+Annual Income (k$)	    -0.012398	1.000000	         0.009903   
+Spending Score (1-100)	-0.327227	0.009903	         1.000000   
+>>>>>>> 5123c86fe8627bdc89f7286f1833ccf8920bdfa1
 
 각 특징간의 상관관계가 부족하여 예측 모델을 구성할 데이터라고 보긴 어렵다. 
 
