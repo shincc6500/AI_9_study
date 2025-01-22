@@ -11,6 +11,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.decorators.http import require_GET, require_POST
 from django.views.decorators.http import require_http_methods
 from .forms import CustomUserChangeForm, CustomUserCreationForm
+from django.contrib import messages
+from .forms import ProfileUpdateForm
+
 
 
 def login(request):
@@ -74,9 +77,23 @@ def change_passward(request):
     return render(request, "change_passward.html", context)
 
 @login_required
-def profile(request):
+def profile(request):    
+    context = {'user': request.user}
+    return render(request, 'profile.html', context)
 
-    return render(request, 'profile.html')
+@login_required
+def update_profile(request):
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()            
+            return redirect('users:profile')  # 프로필 페이지로 리디렉션
+    else:
+        form = ProfileUpdateForm(instance=request.user)
+    context = {
+        'form': form
+        }
+    return render(request, 'update_profile.html', )
 
 
 
