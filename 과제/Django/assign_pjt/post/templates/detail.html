@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h2>글 상세 페이지</h2>
+   
+    <p>ID    : {{post.id}} </p>
+    <p>제목   : {{post.title}}</p>
+    <p>내용   : {{post.content}}</p>   
+    <p>작성자 : {{post.author}} </p>     
+    <p>작성일 : {{post.create_date}}</p>
+    <p>수정일 : {{post.edited_date}}</p>
+    
+
+    <a href="{% url 'post:index' %}">목록 보기</a>
+
+    <hr>
+    <a href="{% url 'post:edit' post.pk %}"><button>글수정</button></a><br><br>
+
+    <form action="{% url 'post:del_post' post.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="글삭제">
+    </form>
+
+{% endblock content %}
