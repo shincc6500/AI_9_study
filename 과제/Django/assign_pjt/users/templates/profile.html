@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+		<h1> {{ user }}의 프로필 페이지 </h1>
+
+		{% if user.profile_image %}
+        <img src="{{ user.profile_image.url }}" alt="Profile picture of {{ user.username }}">
+    {% else %}
+        <p>프로필 사진이 없습니다.</p>
+    {% endif %}
+
+    <div>
+		{% csrf_token %}
+        {{ form.as_p }}
+		
+    </div>
+	<a href="{% url 'users:update_profile' %}">프로필 수정</a>
+		<a href="{% url 'post:index'%}">홈으로 돌아가기</a>
+		
+{% endblock content %}

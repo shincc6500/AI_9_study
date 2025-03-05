@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<h1> INDEX</h1>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'post:create' %}">새 글 작성</a>
+    {% else %}
+        <a href="{% url 'users:login' %}">로그인하고 글 작성하기</a>
+    {% endif %}
+
+    
+    
+    
+    <ul>
+        {% for posting in post %}
+            <li>
+                <a href = "{% url 'post:detail' posting.id %}">
+                    <div>[{{posting.id}}] {{posting.title}}</div>
+                </a>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+
